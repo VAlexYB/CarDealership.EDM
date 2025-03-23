@@ -9,7 +9,7 @@ namespace CarDealership.EDM.Models
         public DealReceiptGenerator(DealReceiptResponse dealReceipt) : base(dealReceipt)
         {
             FileName = $"{dealReceipt.DealDate} - {dealReceipt.Customer}{FormatHelper.GetFormat(DocumentFormat)}";
-            Directory = "deals\\receipts\\";
+            Directory = "deals/receipts/";
         }
     }
 }

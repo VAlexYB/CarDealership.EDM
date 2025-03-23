@@ -12,10 +12,9 @@ namespace CarDealership.EDM.External.GrpcClients
     {
         private readonly DataServiceClient _grpcClient;
 
-        public DataGrpcServiceClient()
+        public DataGrpcServiceClient(DataServiceClient client)
         {
-            var grpcChannel = GrpcChannel.ForAddress("хуй");
-            _grpcClient = new DataServiceClient(channel: grpcChannel);
+            _grpcClient = client;
         }
 
         public async Task<BaseGenerator> GetData(string entity, DocumentType documentType, Guid entityId)

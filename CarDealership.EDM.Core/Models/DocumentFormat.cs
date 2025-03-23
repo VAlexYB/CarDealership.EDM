@@ -2,7 +2,7 @@
 {
     public enum DocumentFormat
     {
-        TX
+        TXT = 0,
     }
 
     public static class FormatHelper
@@ -11,8 +11,8 @@
         {
             return format switch
             {
-                DocumentFormat.TX => ".txt",
-                _ => throw new ArgumentOutOfRangeException(nameof(format), "Неподдерживаемый формат строки");
+                DocumentFormat.TXT => ".txt",
+                _ => throw new ArgumentOutOfRangeException(nameof(format), "Неподдерживаемый формат строки")
             };
         }
     }
