@@ -57,6 +57,14 @@ services.AddScoped<IDocumentsService, DocumentsService>();
 
 var app = builder.Build();
 
+app.UseCors(x =>
+{
+    x.WithHeaders().AllowAnyHeader();
+    x.WithOrigins("http://localhost:3000");
+    x.WithMethods().AllowAnyMethod();
+    x.AllowCredentials();
+});
+
 app.MapControllers();
 
 app.Run();
